@@ -1,5 +1,7 @@
 # Curso visual: el píxel de Meta, explicado como a un niño
 
+**Verlo en línea:** https://gabrielbarrientos99.github.io/curso-pixel-meta/
+
 Curso gratuito de **Biai** con mapas estructurales y animaciones de flujo para entender:
 
 1. **La libreta de Meta**: qué es un conjunto de datos (dataset).
