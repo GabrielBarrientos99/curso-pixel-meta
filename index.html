@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curso visual: el píxel de Meta | Biai</title>
+  <meta name="description" content="Curso visual y gratuito para entender el píxel de Meta, el conjunto de datos, la API de conversiones y los anuncios a WhatsApp, con mapas y animaciones de flujo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/curso.css">
+</head>
+<body>
+
+<header class="portada">
+  <div class="envoltura">
+    <span class="etiqueta">Curso visual · 7 lecciones · 20 minutos</span>
+    <h1>El píxel de Meta, <em>explicado como a un niño</em></h1>
+    <p class="bajada">Qué es el píxel, qué es un conjunto de datos, cómo sabe Meta qué anuncio te trajo una venta, y qué hacer si vendes por WhatsApp. Con mapas y animaciones que muestran por dónde viaja cada dato.</p>
+
+    <nav class="mapa" aria-label="Mapa del curso">
+      <a href="#l1"><b>1</b><span>La libreta de Meta</span><small>Conjunto de datos</small></a>
+      <a href="#l2"><b>2</b><span>El lápiz de la web</span><small>El píxel</small></a>
+      <a href="#l3"><b>3</b><span>El viaje de un clic</span><small>Paso a paso</small></a>
+      <a href="#l4"><b>4</b><span>El lápiz del servidor</span><small>API de conversiones</small></a>
+      <a href="#l5"><b>5</b><span>Ventas por WhatsApp</span><small>API para mensajes</small></a>
+      <a href="#l6"><b>6</b><span>Web y después WhatsApp</span><small>Qué ve y qué no</small></a>
+      <a href="#l7"><b>7</b><span>Lista de clientes</span><small>No es lo mismo</small></a>
+      <a href="#repaso"><b>✓</b><span>Repaso</span><small>5 preguntas</small></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= LECCIÓN 1 ================= -->
+<section class="leccion" id="l1">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 1</span>
+    <h2>La libreta de Meta: el <em>conjunto de datos</em></h2>
+    <div class="analogia">Imagina que Meta le da a tu negocio <strong>una libreta con un número</strong>. En ella se anota lo que hace la gente contigo: “entró a la web”, “vio el precio”, “dejó sus datos”, “compró”. Esa libreta es el <strong>conjunto de datos</strong> (en inglés, <em>dataset</em>).</div>
+    <p>Varios “lápices” pueden escribir en la misma libreta. Después Meta la lee para tres cosas: <strong>medir</strong> qué anuncio vendió, <strong>optimizar</strong> (buscar gente parecida a la que compró) y armar <strong>públicos</strong> (volver a mostrarle el anuncio a quien no compró).</p>
+
+    <div class="lienzo">
+      <svg viewBox="0 0 800 340" role="img" aria-labelledby="t1">
+        <title id="t1">Cuatro orígenes escriben en un conjunto de datos, que Meta usa para medir, optimizar y crear públicos</title>
+        <path class="via" d="M220 48 H300"/><path class="via" d="M220 128 H300"/><path class="via" d="M220 208 H300"/><path class="via" d="M220 288 H300"/>
+        <path class="via" d="M500 78 H580"/><path class="via" d="M500 168 H580"/><path class="via" d="M500 258 H580"/>
+        <path class="flujo" d="M220 48 H300"/><path class="flujo" d="M220 128 H300"/><path class="flujo" d="M220 208 H300"/><path class="flujo" d="M220 288 H300"/>
+        <path class="flujo ambar" d="M500 78 H580"/><path class="flujo ambar" d="M500 168 H580"/><path class="flujo ambar" d="M500 258 H580"/>
+
+        <rect class="caja" x="20" y="20" width="200" height="56" rx="12"/><text class="tit" x="120" y="44" text-anchor="middle">Píxel</text><text class="sub" x="120" y="63" text-anchor="middle">desde tu web</text>
+        <rect class="caja" x="20" y="100" width="200" height="56" rx="12"/><text class="tit" x="120" y="124" text-anchor="middle">API de conversiones</text><text class="sub" x="120" y="143" text-anchor="middle">desde tu servidor</text>
+        <rect class="caja" x="20" y="180" width="200" height="56" rx="12"/><text class="tit" x="120" y="204" text-anchor="middle">API para mensajes</text><text class="sub" x="120" y="223" text-anchor="middle">chats de WhatsApp</text>
+        <rect class="caja" x="20" y="260" width="200" height="56" rx="12"/><text class="tit" x="120" y="284" text-anchor="middle">Archivo CSV</text><text class="sub" x="120" y="303" text-anchor="middle">ventas que subes tú</text>
+
+        <rect class="caja menta" x="300" y="20" width="200" height="296" rx="18"/>
+        <text class="tit" x="400" y="150" text-anchor="middle">Conjunto de datos</text>
+        <text class="sub" x="400" y="172" text-anchor="middle">la libreta de Meta</text>
+        <text class="mono" x="400" y="196" text-anchor="middle">ID 1234567890</text>
+
+        <rect class="caja ambar" x="580" y="50" width="200" height="56" rx="12"/><text class="tit" x="680" y="74" text-anchor="middle">Medir</text><text class="sub" x="680" y="93" text-anchor="middle">qué anuncio vendió</text>
+        <rect class="caja ambar" x="580" y="140" width="200" height="56" rx="12"/><text class="tit" x="680" y="164" text-anchor="middle">Optimizar</text><text class="sub" x="680" y="183" text-anchor="middle">buscar parecidos</text>
+        <rect class="caja ambar" x="580" y="230" width="200" height="56" rx="12"/><text class="tit" x="680" y="254" text-anchor="middle">Públicos</text><text class="sub" x="680" y="273" text-anchor="middle">volver a mostrar</text>
+
+        <circle class="particula" r="5"><animateMotion dur="1.8s" repeatCount="indefinite" path="M220 48 H300"/></circle>
+        <circle class="particula" r="5"><animateMotion dur="1.8s" begin=".45s" repeatCount="indefinite" path="M220 128 H300"/></circle>
+        <circle class="particula" r="5"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M220 208 H300"/></circle>
+        <circle class="particula" r="5"><animateMotion dur="1.8s" begin="1.35s" repeatCount="indefinite" path="M220 288 H300"/></circle>
+        <circle class="particula ambar" r="5"><animateMotion dur="1.8s" begin=".3s" repeatCount="indefinite" path="M500 78 H580"/></circle>
+        <circle class="particula ambar" r="5"><animateMotion dur="1.8s" begin=".9s" repeatCount="indefinite" path="M500 168 H580"/></circle>
+        <circle class="particula ambar" r="5"><animateMotion dur="1.8s" begin="1.5s" repeatCount="indefinite" path="M500 258 H580"/></circle>
+      </svg>
+      <p class="pie-lienzo">Los puntos verdes son eventos que entran a la libreta. Los ámbar son lo que Meta hace con ellos.</p>
+    </div>
+
+    <p><strong>La idea clave:</strong> el píxel <strong>no es</strong> la libreta. El píxel es <strong>uno de los lápices</strong>. La libreta tiene un solo número (ID), y ese mismo número se usa para el píxel y para la API.</p>
+    <p class="fuente">Fuente oficial: <a href="https://www.facebook.com/business/help/750785952855662" target="_blank" rel="noopener">Acerca de los conjuntos de datos en el Administrador de eventos (Meta)</a></p>
+  </div>
+</section>
+
+<!-- ================= LECCIÓN 2 ================= -->
+<section class="leccion" id="l2">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 2</span>
+    <h2>El lápiz de la web: <em>el píxel</em></h2>
+    <div class="analogia">El píxel es como un <strong>anotador sentado en tu web</strong>. Cada vez que alguien hace algo importante, levanta la mano y le dice a Meta: “¡alguien vio el precio!”, “¡alguien dejó sus datos!”.</div>
+    <p>Técnicamente es un pedazo de código JavaScript que se pega en el <code>&lt;head&gt;</code> de cada página. Por eso <strong>solo funciona en páginas web</strong>: vive dentro del navegador de la persona.</p>
+
+    <h3>Las 3 líneas que importan</h3>
+<pre>fbq('init', '1234567890');                 <span style="color:#8aa">// conecta el navegador con TU libreta</span>
+fbq('track', 'PageView');                  <span style="color:#8aa">// "abrió una página"</span>
+fbq('track', 'Lead', { content_name: 'Asistente WhatsApp' });  <span style="color:#8aa">// "dejó sus datos"</span></pre>
+
+    <h3>Los eventos más usados (nombres oficiales)</h3>
+    <table>
+      <tr><th>Evento</th><th>Cuándo se anota</th><th>Ejemplo</th></tr>
+      <tr><td><code>PageView</code></td><td>Abrió cualquier página (viene con el código base)</td><td>Entró a la web</td></tr>
+      <tr><td><code>ViewContent</code></td><td>Vio una página o producto importante</td><td>Llegó a la sección del precio</td></tr>
+      <tr><td><code>Lead</code></td><td>Dejó sus datos para que lo contacten</td><td>Envió el formulario</td></tr>
+      <tr><td><code>Contact</code></td><td>Te contactó por teléfono, chat o correo</td><td>Tocó el botón de WhatsApp</td></tr>
+      <tr><td><code>Schedule</code></td><td>Reservó una cita</td><td>Agendó una demo</td></tr>
+      <tr><td><code>Purchase</code></td><td>Compró (con valor y moneda)</td><td>Página de “gracias por tu compra”</td></tr>
+    </table>
+    <div class="analogia"><strong>¿El píxel aprende?</strong> No, solo anota. Quien aprende es el sistema de anuncios de Meta, cuando tu campaña le dice “busca gente que haga <code>Lead</code>” o “que haga <code>Purchase</code>”.</div>
+    <p class="fuente">Fuentes oficiales: <a href="https://www.facebook.com/business/help/402791146561655" target="_blank" rel="noopener">Especificaciones de los eventos estándar del píxel</a> · <a href="https://www.facebook.com/business/help/964258670337005" target="_blank" rel="noopener">Eventos web estándar y personalizados</a></p>
+  </div>
+</section>
+
+<!-- ================= LECCIÓN 3 ================= -->
+<section class="leccion" id="l3">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 3</span>
+    <h2>El viaje de un clic, <em>paso a paso</em></h2>
+    <p>¿Cómo sabe Meta que la persona que dejó sus datos es la misma que hizo clic en tu anuncio? Avanza con el botón y mira qué pasa en cada momento.</p>
+
+    <div class="lienzo" id="recorrido">
+      <svg viewBox="0 0 800 210" role="img" aria-labelledby="t3">
+        <title id="t3">Recorrido: anuncio, web, página de gracias y Meta</title>
+        <path class="via" d="M180 75 H220"/><path class="via" d="M380 75 H420"/><path class="via" d="M580 75 H620"/>
+        <path class="flujo" d="M180 75 H220"/><path class="flujo" d="M380 75 H420"/><path class="flujo" d="M580 75 H620"/>
+        <g data-paso="0"><rect class="caja" x="20" y="40" width="160" height="70" rx="12"/><text class="tit" x="100" y="70" text-anchor="middle">Anuncio</text><text class="sub" x="100" y="90" text-anchor="middle">clic en Instagram</text></g>
+        <g data-paso="1 2"><rect class="caja" x="220" y="40" width="160" height="70" rx="12"/><text class="tit" x="300" y="70" text-anchor="middle">Tu web</text><text class="sub" x="300" y="90" text-anchor="middle">el píxel anota</text></g>
+        <g data-paso="3"><rect class="caja" x="420" y="40" width="160" height="70" rx="12"/><text class="tit" x="500" y="70" text-anchor="middle">Gracias</text><text class="sub" x="500" y="90" text-anchor="middle">se cuenta el Lead</text></g>
+        <g data-paso="4"><rect class="caja menta" x="620" y="40" width="160" height="70" rx="12"/><text class="tit" x="700" y="70" text-anchor="middle">Meta</text><text class="sub" x="700" y="90" text-anchor="middle">une clic y Lead</text></g>
+        <text class="mono" x="300" y="156" text-anchor="middle">cookies _fbp y _fbc</text>
+        <text class="mono" x="100" y="156" text-anchor="middle">?fbclid=AbC123</text>
+        <path class="via" d="M100 126 H700"/><path class="flujo" d="M100 126 H700"/><circle class="particula" r="6"><animateMotion dur="3.2s" repeatCount="indefinite" path="M100 126 H700"/></circle>
+      </svg>
+      <div class="explica" aria-live="polite">
+        <p id="paso-texto"></p>
+        <pre id="paso-codigo"></pre>
+      </div>
+      <div class="pasos-botones">
+        <button class="boton sec" type="button" id="paso-atras">Atrás</button>
+        <button class="boton" type="button" id="paso-sig">Siguiente</button>
+        <div class="puntos" id="paso-puntos"></div>
+      </div>
+    </div>
+    <p class="fuente">Las cookies <code>_fbp</code> (visitante) y <code>_fbc</code> (clic en anuncio) son las que el píxel usa para reconocer a la persona. Fuente: <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/fbp-and-fbc" target="_blank" rel="noopener">Parámetros fbp y fbc (Meta for Developers)</a></p>
+  </div>
+</section>
+
+<!-- ================= LECCIÓN 4 ================= -->
+<section class="leccion" id="l4">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 4</span>
+    <h2>El lápiz del servidor: la <em>API de conversiones</em></h2>
+    <div class="analogia">Si el píxel es el anotador que está <strong>en la web</strong>, la API de conversiones es un <strong>mensajero que sale de tu oficina</strong> (tu servidor o tu base de datos) y le lleva la noticia directo a Meta, sin pasar por el navegador.</div>
+    <p>¿Por qué existe? Porque el navegador a veces <strong>bloquea</strong> el píxel (bloqueadores de anuncios, iPhone, mala conexión). Desde el servidor la noticia llega igual. Además, el servidor sabe cosas que la web no ve, como <strong>quién pagó por transferencia o Yape</strong>.</p>
+
+    <div class="lienzo">
+      <svg viewBox="0 0 800 260" role="img" aria-labelledby="t4">
+        <title id="t4">La misma compra llega por el navegador y por el servidor, y Meta la cuenta una sola vez gracias al event_id</title>
+        <path class="via" d="M180 130 C230 130 230 60 280 60"/><path class="via" d="M180 130 C230 130 230 200 280 200"/>
+        <path class="via" d="M480 60 C530 60 530 130 580 130"/><path class="via" d="M480 200 C530 200 530 130 580 130"/>
+        <path class="flujo" d="M180 130 C230 130 230 60 280 60"/><path class="flujo ambar" d="M180 130 C230 130 230 200 280 200"/>
+        <path class="flujo" d="M480 60 C530 60 530 130 580 130"/><path class="flujo ambar" d="M480 200 C530 200 530 130 580 130"/>
+        <rect class="caja" x="20" y="95" width="160" height="70" rx="12"/><text class="tit" x="100" y="125" text-anchor="middle">Una compra</text><text class="sub" x="100" y="145" text-anchor="middle">S/ 1,240</text>
+        <rect class="caja" x="280" y="25" width="200" height="70" rx="12"/><text class="tit" x="380" y="53" text-anchor="middle">Navegador · píxel</text><text class="mono" x="380" y="75" text-anchor="middle">event_id: venta-123</text>
+        <rect class="caja ambar" x="280" y="165" width="200" height="70" rx="12"/><text class="tit" x="380" y="193" text-anchor="middle">Servidor · API</text><text class="mono" x="380" y="215" text-anchor="middle">event_id: venta-123</text>
+        <rect class="caja menta" x="580" y="85" width="200" height="90" rx="14"/><text class="tit" x="680" y="118" text-anchor="middle">Meta</text><text class="sub" x="680" y="140" text-anchor="middle">mismo nombre + mismo id</text><text class="sub" x="680" y="158" text-anchor="middle">= cuenta 1 sola compra</text>
+        <circle class="particula" r="5"><animateMotion dur="2.4s" repeatCount="indefinite" path="M180 130 C230 130 230 60 280 60 H480 C530 60 530 130 580 130"/></circle>
+        <circle class="particula ambar" r="5"><animateMotion dur="2.4s" begin=".25s" repeatCount="indefinite" path="M180 130 C230 130 230 200 280 200 H480 C530 200 530 130 580 130"/></circle>
+      </svg>
+      <p class="pie-lienzo">Meta recomienda mandar el mismo evento por las dos vías. El <code>event_id</code> igual evita contarlo dos veces (deduplicación).</p>
+    </div>
+
+    <h3>Así se ve una compra enviada desde el servidor</h3>
+<pre>POST https://graph.facebook.com/v{versión}/{ID_DEL_CONJUNTO}/events
+{
+  "data": [{
+    "event_name": "Purchase",
+    "event_time": 1795000000,
+    "event_id": "venta-123",
+    "action_source": "website",
+    "user_data": { "ph": ["&lt;teléfono cifrado con SHA-256&gt;"], "fbc": "fb.1.…AbC123" },
+    "custom_data": { "value": 1240, "currency": "PEN" }
+  }]
+}</pre>
+    <p>El teléfono viaja <strong>cifrado</strong> (hash): Meta lo compara con sus cuentas sin poder leerlo.</p>
+    <p class="fuente">Fuentes oficiales: <a href="https://www.facebook.com/business/help/823677331451951" target="_blank" rel="noopener">Deduplicación de eventos del píxel y la API de conversiones</a> · <a href="https://developers.facebook.com/docs/marketing-api/conversions-api" target="_blank" rel="noopener">API de conversiones (Meta for Developers)</a></p>
+  </div>
+</section>
+
+<!-- ================= LECCIÓN 5 ================= -->
+<section class="leccion" id="l5">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 5</span>
+    <h2>Si vendes por WhatsApp: la <em>API para mensajes</em></h2>
+    <p>¿Tener píxel significa que ya no puedes mandar el anuncio a WhatsApp? <strong>No.</strong> Puedes seguir mandándolo directo al chat. El píxel no participa: aquí escribe en la libreta <strong>tu bot</strong>, por la API de conversiones para mensajes.</p>
+
+    <div class="lienzo">
+      <svg viewBox="0 0 800 200" role="img" aria-labelledby="t5">
+        <title id="t5">Anuncio a WhatsApp, chat con ctwa_clid, venta avisada por el bot, Meta optimiza a compras</title>
+        <path class="via" d="M190 70 H215"/><path class="via" d="M385 70 H410"/><path class="via" d="M580 70 H605"/>
+        <path class="flujo" d="M190 70 H215"/><path class="flujo" d="M385 70 H410"/><path class="flujo ambar" d="M580 70 H605"/>
+        <rect class="caja" x="20" y="35" width="170" height="70" rx="12"/><text class="tit" x="105" y="65" text-anchor="middle">Anuncio</text><text class="sub" x="105" y="85" text-anchor="middle">botón WhatsApp</text>
+        <rect class="caja" x="215" y="35" width="170" height="70" rx="12"/><text class="tit" x="300" y="65" text-anchor="middle">Chat</text><text class="mono" x="300" y="85" text-anchor="middle">ctwa_clid</text>
+        <rect class="caja ambar" x="410" y="35" width="170" height="70" rx="12"/><text class="tit" x="495" y="65" text-anchor="middle">Pagó</text><text class="sub" x="495" y="85" text-anchor="middle">el bot avisa</text>
+        <rect class="caja menta" x="605" y="35" width="175" height="70" rx="12"/><text class="tit" x="692" y="65" text-anchor="middle">Meta</text><text class="sub" x="692" y="85" text-anchor="middle">optimiza a compras</text>
+        <text class="sub" x="400" y="160" text-anchor="middle">El ctwa_clid es el “código del clic” que WhatsApp entrega cuando el chat empezó en un anuncio</text>
+        <path class="via" d="M105 122 H692"/><path class="flujo" d="M105 122 H692"/><circle class="particula" r="6"><animateMotion dur="2.6s" repeatCount="indefinite" path="M105 122 H692"/></circle>
+      </svg>
+    </div>
+
+    <h3>Requisitos oficiales para “Maximizar compras a través de mensajes”</h3>
+    <table>
+      <tr><th>Requisito</th><th>Qué significa</th></tr>
+      <tr><td>10 compras en 30 días</td><td>Antes de poder elegir ese objetivo, Meta tiene que haber recibido al menos 10 compras</td></tr>
+      <tr><td>Que vengan de anuncios</td><td>Solo cuentan los chats que empezaron con un clic en un anuncio a WhatsApp</td></tr>
+      <tr><td>Dentro de 7 días</td><td>La compra se marca hasta 7 días después del clic</td></tr>
+      <tr><td>Cómo se avisa</td><td>Con la API de WhatsApp (bots): API de conversiones para mensajes con el <code>ctwa_clid</code>. Con la app WhatsApp Business: etiquetas como “Pagado” o “Pedido nuevo”</td></tr>
+    </table>
+    <p class="fuente">Fuentes oficiales: <a href="https://www.facebook.com/business/help/1214599109289826" target="_blank" rel="noopener">Optimizar anuncios de mensajes para compras</a> · <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/business-messaging" target="_blank" rel="noopener">API de conversiones para mensajes</a></p>
+  </div>
+</section>
+
+<!-- ================= LECCIÓN 6 ================= -->
+<section class="leccion" id="l6">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 6</span>
+    <h2>Anuncio → web → WhatsApp: <em>qué ve y qué no</em></h2>
+    <p>Puedes mandar el anuncio a tu web y, desde ahí, a tu WhatsApp. <strong>Todo lo que pasa en la web sí se registra.</strong> Lo que pasa después dentro del chat (la conversación, la llamada, el pago) el píxel ya no lo ve.</p>
+
+    <div class="lienzo">
+      <svg viewBox="0 0 800 230" role="img" aria-labelledby="t6">
+        <title id="t6">El píxel ve la web hasta el botón de WhatsApp; la venta en el chat hay que avisarla aparte</title>
+        <rect class="contenedor" x="15" y="25" width="525" height="150" rx="18"/>
+        <text class="sub" x="35" y="50">Lo que ve el píxel</text>
+        <path class="via" d="M135 108 H155"/><path class="via" d="M260 108 H280"/><path class="via" d="M385 108 H405"/><path class="via" d="M510 108 H580"/>
+        <path class="flujo" d="M135 108 H155"/><path class="flujo" d="M260 108 H280"/><path class="flujo" d="M385 108 H405"/><path class="flujo coral" d="M510 108 H580"/>
+        <rect class="caja" x="30" y="80" width="105" height="56" rx="10"/><text class="tit" x="82" y="104" text-anchor="middle">Web</text><text class="mono" x="82" y="123" text-anchor="middle">PageView</text>
+        <rect class="caja" x="155" y="80" width="105" height="56" rx="10"/><text class="tit" x="207" y="104" text-anchor="middle">Precio</text><text class="mono" x="207" y="123" text-anchor="middle">ViewContent</text>
+        <rect class="caja" x="280" y="80" width="105" height="56" rx="10"/><text class="tit" x="332" y="104" text-anchor="middle">Formulario</text><text class="mono" x="332" y="123" text-anchor="middle">Lead</text>
+        <rect class="caja" x="405" y="80" width="105" height="56" rx="10"/><text class="tit" x="457" y="104" text-anchor="middle">Botón</text><text class="mono" x="457" y="123" text-anchor="middle">Contact</text>
+        <rect class="caja gris" x="580" y="80" width="200" height="56" rx="10"/><text class="tit" x="680" y="104" text-anchor="middle">WhatsApp</text><text class="sub" x="680" y="123" text-anchor="middle">chat, llamada, pago</text>
+        <text class="sub" x="680" y="200" text-anchor="middle">la venta se avisa con la API o un CSV</text>
+        <path class="via" d="M82 156 H457"/><path class="flujo" d="M82 156 H457"/><circle class="particula" r="5"><animateMotion dur="3s" repeatCount="indefinite" path="M82 156 H457"/></circle>
+        <circle class="particula coral" r="5"><animateMotion dur="1.5s" begin="1.5s" repeatCount="indefinite" path="M510 108 H580"/></circle>
+      </svg>
+    </div>
+    <p><strong>Cómo cerrar el círculo:</strong> el formulario pidió el teléfono. Cuando esa persona paga por WhatsApp, tu servidor envía un <code>Purchase</code> con ese teléfono cifrado (lección 4), o lo subes en un archivo CSV en el Administrador de eventos. Meta reconoce que es la misma persona que hizo clic.</p>
+  </div>
+</section>
+
+<!-- ================= LECCIÓN 7 ================= -->
+<section class="leccion" id="l7">
+  <div class="envoltura">
+    <span class="etiqueta">Lección 7</span>
+    <h2>“Subo mi base de clientes por API”: <em>no es lo mismo</em></h2>
+    <p>Hay dos cosas que se confunden mucho. Las dos usan teléfonos o correos cifrados, pero sirven para cosas distintas:</p>
+    <div class="dos">
+      <div class="tarjeta">
+        <h3>Eventos (API de conversiones)</h3>
+        <p>“Esta persona <strong>compró hoy por S/ 1,240</strong>”.</p>
+        <ul>
+          <li class="si">Va a la libreta (conjunto de datos)</li>
+          <li class="si">Mide qué anuncio vendió</li>
+          <li class="si">Enseña a la campaña a buscar compradores</li>
+          <li class="si">También sirve para armar públicos</li>
+        </ul>
+      </div>
+      <div class="tarjeta">
+        <h3>Lista de clientes (público personalizado)</h3>
+        <p>“Estas personas <strong>son mis clientes</strong>”.</p>
+        <ul>
+          <li class="no">No va a la libreta, va a Públicos</li>
+          <li class="no">No mide qué anuncio vendió</li>
+          <li class="si">Mostrarles anuncios o excluirlos</li>
+          <li class="si">Crear públicos similares a ellos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cuidado"><strong>Prohibido:</strong> Meta no permite compartir información de salud, financiera ni de menores de 13 años. Por ejemplo, una lista de <strong>pacientes</strong> de una clínica nunca se sube. Solo tus propios clientes, con permiso para usar sus datos.</div>
+    <p class="fuente">Fuentes oficiales: <a href="https://www.facebook.com/business/help/170456843145568" target="_blank" rel="noopener">Crear un público personalizado desde una lista de clientes</a> · <a href="https://www.facebook.com/business/help/606443329504150" target="_blank" rel="noopener">Cómo preparar los datos y qué información está prohibida</a></p>
+  </div>
+</section>
+
+<!-- ================= REPASO ================= -->
+<section class="leccion" id="repaso">
+  <div class="envoltura">
+    <span class="etiqueta">Repaso</span>
+    <h2>¿Lo entendiste? <em>5 preguntas</em></h2>
+    <div id="preguntas"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="envoltura">
+    Curso de <strong>Biai</strong> · noviembre de 2026 · Basado en la documentación oficial de Meta. Los nombres de botones pueden cambiar con el tiempo.
+  </div>
+</footer>
+
+<script src="js/curso.js"></script>
+</body>
+</html>
